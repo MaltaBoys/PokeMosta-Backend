@@ -1,0 +1,17 @@
+{
+  "name": "pokemosta-backend",
+  "version": "1.0.0",
+  "description": "pokemosta backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "MaltaBoys",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.3",
+    "nodemon": "^2.0.22"
+  }
+}
