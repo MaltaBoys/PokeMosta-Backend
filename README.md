@@ -20,7 +20,7 @@ npm install
 ## Usage
 
 ```bash
-npm run dev
+node app
 ```
 
 ## License
