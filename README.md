@@ -6,7 +6,7 @@
 ## Facility
 
 - [x] Login
-- [x] Register
+- [ ] Register
 - [x] Logout
 - [x] Get user
 - [x] Get all users
