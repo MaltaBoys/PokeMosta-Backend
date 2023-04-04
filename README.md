@@ -6,11 +6,11 @@
 ## Facility
 
 - [ ] Login
-- [ ] Register
+- [x] Register
 - [ ] Logout
-- [ ] Get user
-- [ ] Get all users
-
+- [ ] Forgot Password
+- [ ] Update Profile
+- [ ] Update Password
 ## Installation
 
 ```bash
