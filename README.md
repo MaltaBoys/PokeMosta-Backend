@@ -5,11 +5,11 @@
 
 ## Facility
 
-- [x] Login
+- [ ] Login
 - [ ] Register
-- [x] Logout
-- [x] Get user
-- [x] Get all users
+- [ ] Logout
+- [ ] Get user
+- [ ] Get all users
 
 ## Installation
 
