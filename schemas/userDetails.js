@@ -15,6 +15,11 @@ const UserDetailsSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    profilePic: {
+      type: String,
+      required: false,
+      default: "https://i.imgur.com/0y0XQ9A.png",
+    },
     date: {
       type: Date,
       default: Date.now,
