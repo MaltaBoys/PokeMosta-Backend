@@ -5,7 +5,7 @@
 
 ## Facility
 
-- [ ] Login
+- [x] Login
 - [x] Register
 - [ ] Logout
 - [ ] Forgot Password
