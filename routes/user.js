@@ -92,7 +92,7 @@ router.post("/login", async (req, res) => {
   }
 });
 
-// Show user details TODO: add token verification
+// Show user details TODO: have to add token verification 
 /* router.post("/userData", async (req, res) => {
   const token = req.cookies.token;
 
