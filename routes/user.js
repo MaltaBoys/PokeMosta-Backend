@@ -93,9 +93,9 @@ router.post("/login", async (req, res) => {
 });
 
 // Show user details TODO: add token verification
-router.post("/userData", async (req, res) => {
-/*   const token = req.cookies.token;
- */
+/* router.post("/userData", async (req, res) => {
+  const token = req.cookies.token;
+
   if (!token) {
     return res.status(401).json({
       status: "error",
@@ -113,6 +113,6 @@ router.post("/userData", async (req, res) => {
   } catch (error) {
     res.status(500).json({ status: "error", message: error.message });
   }
-});
+}); */
 
 module.exports = router;
