@@ -18,7 +18,7 @@ const UserDetailsSchema = new mongoose.Schema(
     profilePic: {
       type: String,
       required: false,
-      default: "https://i.imgur.com/0y0XQ9A.png",
+      default: "shorturl.at/iFZ35", // Default profile picture
     },
     date: {
       type: Date,

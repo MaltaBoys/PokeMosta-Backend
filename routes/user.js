@@ -61,7 +61,7 @@ router.post("/login", async (req, res) => {
   try {
     // Check if user exists
     if (!user) {
-      return res.status(404).json({ 
+      return res.status(404).json({
         status: "error",
         message: "User not found",
         type: "userNotFound",
@@ -74,7 +74,7 @@ router.post("/login", async (req, res) => {
         { email: user.email, profilePic: user.profilePic },
         JWT_SECRET,
         {
-          expiresIn: "15m",
+          expiresIn: "1d",
         }
       );
 
@@ -92,27 +92,32 @@ router.post("/login", async (req, res) => {
   }
 });
 
-// Show user details TODO: have to add token verification 
-/* router.post("/userData", async (req, res) => {
-  const token = req.cookies.token;
+// Show user details
+router.post("/userData", async (req, res) => {
 
-  if (!token) {
-    return res.status(401).json({
-      status: "error",
-      message: "Unauthorized",
-      type: "unauthorized",
-    });
-  }
+  const { token } = req.body;
+  const user = jwt.verify(token, JWT_SECRET);
+  console.log(user);
 
   try {
-    const { user } = jwt.verify(token, JWT_SECRET);
+    const user = jwt.verify(token, JWT_SECRET);
+
     const userEmail = user.email;
-    userModel.findOne({ email: userEmail }).then((user) => {
-      res.json(user);
-    });
+    const userData = await userModel.findOne({ email: userEmail });
+
+    if (!userData) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    return res
+      .status(200)
+      .json({ message: "User data retrieved successfully", data: userData });
   } catch (error) {
-    res.status(500).json({ status: "error", message: error.message });
+    if (error.name === "TokenExpiredError") {
+      return res.status(401).json({ message: "Token expired" });
+    }
+    return res.status(401).json({ message: "Invalid token" });
   }
-}); */
+});
 
 module.exports = router;
