@@ -1,0 +1,9 @@
+# Ignore .env file
+.env
+
+# Ignore compiled files and directories
+*.pyc
+__pycache__/
+*.class
+target/
+*.log

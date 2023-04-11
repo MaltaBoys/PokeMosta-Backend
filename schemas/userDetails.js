@@ -5,6 +5,8 @@ const UserDetailsSchema = new mongoose.Schema(
     username: {
       type: String,
       required: false,
+      default: "User" + Math.floor(Math.random() * 1000000000) + 1,
+      unique: true,
     },
     email: {
       type: String,
@@ -19,6 +21,11 @@ const UserDetailsSchema = new mongoose.Schema(
       type: String,
       required: false,
       default: "shorturl.at/iFZ35", // Default profile picture
+    },
+    bannerPic: {
+      type: String,
+      required: false,
+      default: "shorturl.at/iFZ35", // Default banner picture
     },
     date: {
       type: Date,
