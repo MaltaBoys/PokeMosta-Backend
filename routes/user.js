@@ -1,12 +1,13 @@
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 const { userModel } = require("../schemas/userDetails.js");
 
-const jwt = require("jsonwebtoken");
+require('dotenv').config();
 
-const JWT_SECRET =
-  "0&ly%k4b94?^Cy9xZ@7za$DD_(1/dYquT/wH5!!Djiq-gOR7*BQoNr8çVMDMG2Ç};>F+Qi0oSD)eU6<(ATU";
+
+const JWT_SECRET = process.env.JWT_SECRET;
 
 // Register a new user
 router.post("/register", async (req, res) => {
@@ -97,7 +98,6 @@ router.post("/userData", async (req, res) => {
 
   const { token } = req.body;
   const user = jwt.verify(token, JWT_SECRET);
-  console.log(user);
 
   try {
     const user = jwt.verify(token, JWT_SECRET);
